@@ -1,0 +1,12 @@
+--- ./drivers/net/ethernet/ti/cpsw.c	2016-06-22 02:03:10.939829827 -0700
++++ ./drivers/net/ethernet/ti/cpsw.c	2016-06-21 05:15:41.065352802 -0700
+@@ -1189,7 +1189,8 @@
+ 	cpsw_ale_control_set(priv->ale, priv->host_port, ALE_VLAN_AWARE,
+ 			     CPSW_ALE_VLAN_AWARE);
+ 	control_reg = readl(&priv->regs->control);
+-	control_reg |= CPSW_VLAN_AWARE;
++	//control_reg |= CPSW_VLAN_AWARE;
++	control_reg &= ~CPSW_VLAN_AWARE;
+ 	writel(control_reg, &priv->regs->control);
+ 	fifo_mode = (priv->data.dual_emac) ? CPSW_FIFO_DUAL_MAC_MODE :
+ 		     CPSW_FIFO_NORMAL_MODE;
