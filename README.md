@@ -35,7 +35,7 @@ $ cd linux-3.12.10-ti2013.12.01-am3352_som/
 
 patch ethernet
 
-$ wget -c https://rcn-ee.com/repos/git/u-boot-patches/v2016.03/0001-am335x_evm-uEnv.txt-bootz-n-fixes.patch
+$ wget https://github.com/stefanomunaretto/Olimex_AM3352/blob/master/ethernet.patch
 $ patch -p1 < ethernet.patch
 
 $ make ARCH=arm ${CC} am3352_som_defconfig 
